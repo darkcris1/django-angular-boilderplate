@@ -1,0 +1,73 @@
+/* RESPONSIVE
+ * @desc : Declares breakpoints for each device;
+ */
+
+$phone-width: toem(300);
+$tablet-width: toem(768);
+$desktop-width: toem(992);
+$desktop-md-width: toem(1200);
+$desktop-lg-width:toem(1440);
+$desktop-xlg-width:toem(1600);
+
+
+@mixin mobile {
+    @media (min-width: 0) and (max-width: $tablet-width) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $tablet-width) and (max-width: $desktop-width) {
+        @content;
+    }
+}
+
+
+@mixin desktop {
+    @media (min-width: $desktop-width) and (max-width: $desktop-lg-width) {
+        @content;
+    }
+}
+
+@mixin desktop-lg {
+    @media (min-width: $desktop-xlg-width) {
+        @content;
+    }
+}
+
+$responsive-breakpoints: (
+    "xs": 0,
+    "sm": $phone-width,
+    "md": $tablet-width,
+    "lg": $desktop-width,
+    "xlg": $desktop-lg-width,
+    "xxlg": $desktop-xlg-width,
+);
+
+
+@mixin responsive($width, $type: min) {
+
+    @if type-of($width) == number {
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    } @else if map_has_key($responsive-breakpoints, $width) {
+        $width: map_get($responsive-breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin landscape{
+    @media only screen 
+        and (min-device-width: $phone-width )
+        and (max-device-width: 568px ) // recommnended max device width
+        and (orientation: landscape )
+    {
+        @content;
+    }
+}

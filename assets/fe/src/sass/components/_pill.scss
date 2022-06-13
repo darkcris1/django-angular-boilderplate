@@ -1,0 +1,24 @@
+.Pill {
+    padding: torem(2) torem(8);
+    border-radius: 20px;
+    word-break: break-word;
+    color: $P-white;
+    display: inline-block;
+    font-weight: 500;
+    &-primary {
+        background: $P-primary;
+    }
+    &-secondary {
+        background: $P-secondary;
+    }
+    &-tertiary {
+        background: $P-tertiary;
+    }
+    &-fourth {
+        background: $P-fourth;
+        color: $P-black;
+    }
+    &-grey {
+        background: $P-grey;
+    }
+}

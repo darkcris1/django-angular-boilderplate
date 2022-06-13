@@ -1,0 +1,11 @@
+/* CONVERT: PX TO REM;
+ * @desc : converts PX values to REM;
+ */
+@use "sass:math";
+
+@function torem($value){
+	@return #{ math.div($value,$basefont) }rem;
+}
+@function toem($value){
+	@return #{math.div($value,$basefont)}em;
+}

@@ -1,0 +1,13 @@
+@each $color, $value in $theme-colors {
+    .btn-#{$color} {
+        background-color: var(--#{$color});
+        border-color: var(--#{$color});
+
+        @if $color == "danger"{
+            color: var(--bs-white)
+        }
+        &:hover {
+            background-color: var(--#{$color}-light);
+        }
+    }
+}

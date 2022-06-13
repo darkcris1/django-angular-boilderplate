@@ -1,0 +1,51 @@
+@import url("https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css");
+//global
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/root";
+
+@import 'global/variables';
+@import 'global/functions';
+
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/utilities";
+@import 'overrides/bootstrap';
+@import "~bootstrap/scss/utilities/api";
+
+
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+// @import "~bootstrap/scss/nav";
+// @import "~bootstrap/scss/navbar";
+// @import "~bootstrap/scss/transitions";
+
+
+@import 'global/typography';
+
+
+@import 'global/mixins/flex';
+@import 'global/mixins/responsive';
+@import 'global/mixins/components';
+@import 'global/mixins/animations';
+
+//overrides
+@import 'overrides/global';
+@import 'global/utils';
+
+// Components
+@import "components/button";
+@import "components/forms";
+@import "components/avatar";
+@import "components/dropdown";
+@import "components/modal";
+
+    
+// Pages

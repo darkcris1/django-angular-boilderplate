@@ -1,0 +1,124 @@
+
+@use "sass:math";
+
+$rgl: "Montserrat";
+
+// Border Radius
+$b-radius: 8px;
+$b-radius-10: 10px;
+$b-radius-4: 4px;
+$b-radius-6: 6px;
+$b-radius-2: 2px;
+
+
+// Sidebar
+$sidebar-width: 255px;
+
+//font-sizes:
+$basefont: 16;
+$h1 : math.div(80, $basefont)rem;
+$h2 : math.div(60, $basefont)rem;
+$h3 : math.div(35, $basefont)rem;
+$h4 : math.div(25, $basefont)rem;
+$h5 : math.div(23, $basefont)rem;
+$h6 : math.div(22, $basefont)rem;
+$normal: math.div(16, $basefont)rem;
+$small : math.div(14, $basefont)rem;
+$xsmall: math.div(12, $basefont)rem;
+
+//spacing sizes
+
+$spacing-none: 0;
+$spacing-xs : torem(6);
+$spacing-sm : torem(10);
+$spacing-md : torem(15);
+$spacing-lg : torem(20);
+$spacing-xlg : torem(30);
+$spacing-xxlg: torem(60);
+$spacing-xxxlg: torem(100);
+
+//animation variable
+
+$cubic-bezier: 'cubic-bezier(0.6, -0.28, 0.74, 0.05)';
+
+// Box Shadows
+$b-shadow: 0 13px 10px 0 rgba(0, 0, 0, 0.52);
+
+
+// Common FOnt Sizes
+$text-xs: torem(12);
+$text-sm: torem(14);
+$text-md: torem(18); 
+$text-lg: torem(24); 
+$text-xlg: torem(30); 
+
+// Z-Indexes
+$nav-index: 500;
+$overlap-page: 1001;
+$overlap-page-2: 1002;
+$modal-index: 1050; // default value of bootstrap modal
+
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1228px
+);
+
+
+// Bootstrap utilities
+$font-sizes: (
+  36: #{torem(36)},
+  32: #{torem(32)},
+  28: #{torem(28)},
+  24: #{torem(24)},
+  20: #{torem(20)},
+  22: #{torem(22)},
+  16: #{torem(16)},
+  18: #{torem(18)},
+  14: #{torem(14)},
+  12: #{torem(12)}
+);
+$font-weights: (
+  "thin": 100,
+  "extralight": 200,
+  "light": 300,
+  "normal": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+  "black": 900,
+);
+
+$P-primary: #{var(--p)}; 
+$P-primary-20: #{var(--p-20)}; 
+
+$P-secondary: #{var(--s)}; 
+$P-secondary-dark: #{var(--s-dark)}; 
+$P-secondary-dark-20: #{var(--s-dark-20)}; 
+
+$P-tertiary: #{var(--t)}; 
+$P-tertiary-dark: #{var(--t-dark)}; 
+$P-tertiary-dark-20: #{var(--t-dark-20)}; 
+
+$P-fourth: #{var(--f)};
+$P-fourth-dark: #{var(--f-dark)}; 
+$P-fourth-dark-20: #{var(--f-dark-20)}; 
+
+$P-quaternary: #{var(--q)}; 
+
+$P-grey: #{var(--grey)};
+$P-grey-dark: #{var(--grey-dark)};
+$P-grey-dark-20: #{var(--grey-dark-20)};
+
+$P-white: #{var(--white)};
+$P-black: #{var(--black)};
+$P-extra: #{var(--extra)};
+
+
+$P-link-color: #{var(--link-color)};
+
+$line-color: #{var(--l-color)};

@@ -1,0 +1,7 @@
+.dropdown {
+    &-item {
+        &:active {
+            background: unset;
+        }
+    }
+}

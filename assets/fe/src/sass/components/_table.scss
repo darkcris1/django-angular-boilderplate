@@ -1,0 +1,167 @@
+.P-table {
+    overflow: hidden;
+    border-radius: torem(10);
+    border: 1px solid $line-color;
+    border-top: none;
+    table {
+        width: 100%;
+     
+    }
+    thead {
+        background: $P-primary;
+        color: $P-white;
+        td {
+            font-weight: 600;
+        }
+    }
+    tbody {
+    
+        tr {
+            border-bottom: 1px solid $line-color;
+        }
+    }
+    td {
+        padding: torem(10) torem(20);
+        text-align: center;
+        font-size: torem(14);
+        @include responsive("md") {
+            padding: torem(10) torem(30);
+        }
+    }
+    td:first-child {
+        text-align: left;
+    }
+}
+
+
+.Color-Table {
+    $P: &;
+    $gap: 3px;
+    $padding: 12;
+    $radius: 5;
+    border-radius: torem($radius);
+    overflow: hidden;
+    gap: torem($padding * 2);
+    @include responsive("lg") {
+        gap: $gap;
+    }
+    &-Head {
+        text-align: center;
+        padding: torem(10) 0;
+        border-radius: torem(5);
+        color: $P-white;
+        @include responsive("lg") {
+            border-radius: 0;
+        }
+    } 
+    &-Body {
+        $P: &;
+        grid-template-columns: 1fr;
+        display: grid;
+        gap: torem($padding);
+        @include responsive("lg") {
+            grid-template-columns: 1fr 3fr;
+            gap: $gap;
+        }
+        &-Title,&-Subtitle {
+            display: grid;
+            place-items: center;
+            text-align: center; 
+            padding: torem($padding);
+            border-radius: torem($radius);
+            @include responsive("lg") {
+                border-radius: 0;
+            }
+        }
+        &-Title {
+            color: $P-white;
+            font-weight: 600;
+        }
+        &-Subtitle {
+            font-weight: 500;
+        }
+
+        &-Text {
+            background-color: transparent;
+        }
+        &.Primary {
+            #{$P}-Title {
+                background: $P-primary;
+            }
+            #{$P}-Subtitle {
+                background: $P-primary-20;
+            }
+            #{$P}-Text {
+                @include responsive("lg") {
+                    background: $P-primary-20;
+                }
+            }
+        }
+        &.Secondary {
+            #{$P}-Title {
+                background: $P-secondary-dark;
+            }
+            #{$P}-Subtitle {
+                background: $P-secondary-dark-20;
+            }
+            #{$P}-Text {
+                @include responsive("lg") {
+                    background: $P-secondary-dark-20;
+                }
+            }
+        }
+        &.Fourth {
+            #{$P}-Title {
+                background: $P-fourth-dark;
+            }
+            #{$P}-Subtitle {
+                background: $P-fourth-dark-20;
+            }
+            #{$P}-Text {
+                @include responsive("lg") {
+                    background: $P-fourth-dark-20;
+                }
+            }
+        }
+        &.Grey {
+            #{$P}-Title {
+                background: $P-grey-dark;
+            }
+            #{$P}-Subtitle {
+                background: $P-grey-dark-20;
+            }
+            #{$P}-Text {
+                @include responsive("lg") {
+                    background: $P-grey-dark-20;
+                }
+            }
+        }
+
+        &-Content {
+            display: flex;
+            flex-direction: column;
+            gap: $gap;
+            & > div {
+                grid-template-columns: 1fr;
+                display: grid;   
+                gap: $gap;
+                @include responsive("lg") {
+                    grid-template-columns: 1fr 3fr;
+                }
+            }
+        }
+        &-Text {
+            font-size: torem(14);
+            padding: torem($padding);
+            line-height: 23.8px;
+            text-align: center;
+            p {
+                margin-bottom: 0;
+            }
+            @include responsive("lg") {
+                text-align: left;
+            }
+        }
+      
+    }
+}

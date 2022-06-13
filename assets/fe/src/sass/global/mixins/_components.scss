@@ -1,0 +1,287 @@
+/* FONT FAMILY
+ * @desc : accepts value for font-weight ;
+ FORMAT: NORMAL = @include font-family($SofiaPro,$Semi-Bold);
+         ITALIC = @include font-family($SofiaPro,$Semi-Bold, true);
+ */
+@mixin font-family($family, $weight, $italic:false) {
+    @if $italic==false {
+        font-family: unquote($family + ' '+ $weight);
+    }
+
+    @else {
+        font-family: unquote($family + ' '+ $weight + ' Italic');
+    }
+
+}
+
+
+/* BOX SHADOW
+ * @desc : sets styling for box-shadows;
+ */
+
+@mixin box-shadow($hr-offset, $vr-offser, $blur-radius, $spread-radius, $color) {
+    -moz-box-shadow: $hr-offset $vr-offser $blur-radius $spread-radius $color;
+    -webkit-box-shadow: $hr-offset $vr-offser $blur-radius $spread-radius $color;
+    box-shadow: $hr-offset $vr-offser $blur-radius $spread-radius $color;
+}
+
+@mixin no-shadow {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* AVATAR COLOR STYLING
+ * @desc : sets background color for avatar with no picture;
+ */
+
+@mixin avatar-color($color, $value) {
+    color: $color;
+    background: lighten($color, $value);
+}
+
+/* SCROLLBARS
+ * @desc : accets values for styling the scroll bars;
+ */
+@mixin scrollbar($size, $primary, $secondary, $radius, $opacity) {
+    &::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba($primary, $opacity);
+        border-radius: $radius;
+
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba($secondary, $opacity);
+    }
+
+    // For Internet Explorer
+    body {
+        scrollbar-face-color: $primary;
+        scrollbar-track-color: $secondary;
+    }
+}
+@mixin hide-scrollbar{
+    &::-webkit-scrollbar {
+        width: 0px;
+        height:0px;
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(#ffffff, 0);
+
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(#ffffff, 0);
+    }
+
+    // For Internet Explorer
+    body {
+        scrollbar-face-color: rgba(#ffffff, 0);
+        scrollbar-track-color: rgba(#ffffff, 0);
+    }
+}
+
+
+@mixin transparent-scrollbar{
+    &::-webkit-scrollbar {
+        width: 8px;
+        height:auto;
+        border-radius:$b-radius;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(#ffffff, 0.2);
+
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(#ffffff, 0);
+    }
+
+    // For Internet Explorer
+    body {
+        scrollbar-face-color: rgba(#ffffff, 0);
+        scrollbar-track-color: rgba(#ffffff, 0);
+    }
+}
+
+
+/* BADGES
+ * @desc : sets color for styling badges;
+ */
+
+@mixin badge-pill-mono($color, $bgvalue) {
+    background-color: lighten($color, $bgvalue);
+    color: $color;
+}
+
+
+/* FIT CONTENT
+ * @desc : allows crossbrowser width/height for fit-content;
+ */
+@mixin fit-content($property) {
+    #{$property}: -moz-fit-content;
+    #{$property}: -webkit-fit-content;
+    #{$property}: fit-content;
+}
+
+
+/* TRANSITIONS
+ * @desc : allows crossbrowsing properties for transitions;
+ */
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+/* PLACEHOLDERS
+ * @desc : allows crossbrowsing properties placeholders;
+ */
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        @content;
+    }
+
+    &::-moz-placeholder {
+        /* Firefox 19+ */
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        /* IE 10+ */
+        @content;
+    }
+
+    &:-moz-placeholder {
+        /* Firefox 18- */
+        @content;
+    }
+}
+
+/* CIRCLE
+ * @desc : makes the element circle;
+ */
+@mixin circle {
+    border-radius: 50%;
+}
+
+
+
+/* IMAGE COVER
+ * @desc : background image set to cover/center;
+ */
+@mixin Background-Image-Cover($width, $height) {
+    background: {
+        position: center;
+        size: cover;
+    }
+
+    width: $width;
+    height: $height;
+}
+
+
+
+/* BANNER TYPE STYLING
+ * @desc : sets styling for banners;
+ */
+
+@mixin banner($align-center:false) {
+    h1 {
+        @include font-family($SofiaPro, $Bold);
+        line-height: 1.33;
+    }
+
+    h5 {
+        @include font-family($SofiaPro, $normal);
+        margin-bottom: torem(40);
+    }
+
+    .btn {
+        max-width: torem(200);
+    }
+
+    @if $align-center==true {
+        @include flexbox();
+        @include align-items(center);
+    }
+
+    @else {
+        display: block;
+    }
+}
+
+/* BUTTON STYLING
+ * @desc : sets styling for buttons;
+ */
+@mixin button($rounded: false, $spacedOut: false) {
+    @if $rounded==true {
+        border-radius: torem(6);
+    }
+
+    @if $rounded==false {
+        border-radius: 0;
+    }
+
+    @if $spacedOut==true {
+        letter-spacing: 0.7px;
+    }
+
+    @if $spacedOut==false {
+        letter-spacing: 0;
+    }
+}
+
+/* EQUAL WIDTH AND HEIGHT
+ * @desc : sets width and height of the 
+            element as equal
+ */
+
+@mixin equal-wh($size, $percentage:false) {
+
+    @if $percentage==true {
+        width: unquote($size + '%');
+
+        height:  unquote($size + '%');
+    }
+
+    @else {
+        width: torem($size);
+        height: torem($size);
+    }
+}
+@mixin equal-max-wh($size, $percentage:false) {
+
+    @if $percentage==true {
+        max-width: unquote($size + '%');
+       
+        max-height:  unquote($size + '%');
+    }
+
+    @else {
+        max-width: torem($size);
+        max-height: torem($size);
+    }
+}
+
+
+
+// This is will transform long text into truncate depend on max-width
+// "12312312123123" -> "123213..."
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

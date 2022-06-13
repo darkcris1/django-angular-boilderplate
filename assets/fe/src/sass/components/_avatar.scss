@@ -1,0 +1,30 @@
+.avatar {
+    border-radius: 50%;
+    background: {
+        size: cover;
+        position: center;
+    }
+
+    &-sm {
+        height: torem(28);
+        width: torem(28);
+        @extend .avatar;
+    }
+
+    &-md {
+        height: torem(32);
+        width: torem(32);
+        @extend .avatar;
+    }
+    &-lg {
+        height: torem(40);
+        width: torem(40);
+        @extend .avatar;
+    }
+    &-80 {
+        height: torem(80);
+        width: torem(80);
+        @extend .avatar;
+    }
+
+}

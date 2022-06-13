@@ -1,0 +1,100 @@
+// Cursor
+.cur-p {
+    cursor: pointer;
+}
+
+.cur-a {
+    cursor: not-allowed;
+}
+
+.cur-d {
+    cursor: default;
+}
+
+// .bg-white {
+//     background: $P-white !important;
+// }
+// .bg-primary {
+//     background: $P-primary !important;
+// }
+// .bg-secondary {
+//     background: $P-secondary !important;
+// }
+// .bg-grey {
+//     background: $P-grey !important;
+// }
+// .bg-fourth {
+//     background: $P-fourth !important;
+// }
+// .bg-tertiary {
+//     background: $P-tertiary !important;
+// }
+
+// .bg-black {
+//     background: $P-black !important;
+// }
+
+.fw-medium {
+    font-weight: 500;
+}
+.fw-semibold {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+// .text-primary {
+//     color: $P-primary !important;
+// }
+// .text-secondary {
+//     color: $P-secondary !important;
+// }
+// .text-extra {
+//     color: $P-extra !important;
+// }
+
+// .text-black {
+//     color: $P-black !important;
+// }
+// .text-white {
+//     color: $P-white !important;
+// }
+// .text-grey {
+//     color: $P-grey !important;
+// }
+// .text-link {
+//     color: $P-link-color !important;
+// }
+// Divider
+
+.vertical-divider {
+    background:var(--extra);
+    width: 0;
+    height: 100%;
+    border: 1px solid rgba(#000, .15);
+}
+
+
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.mobile-only {
+    display: flex !important;
+    @include responsive("lg") {
+        display: none !important;
+    }
+}
+
+.desktop-only {
+    display: none !important;
+    @include responsive("lg") {
+        display: flex !important;
+    }
+ 
+}

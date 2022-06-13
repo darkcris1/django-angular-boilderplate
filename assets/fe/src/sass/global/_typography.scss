@@ -1,0 +1,31 @@
+// $fonts: (
+//   "blk": "Inter-Black",
+//   "bld": "Inter-Bold",
+//   "ebld": "Inter-ExtraBold",
+//   "lgt": "Inter-Light",
+//   "elgt": "Inter-ExtraLight",
+//   "smb": "Inter-SemiBold",
+//   "thin": "Inter-Thin",
+//   "rgl": "Inter-Regular",
+//   "med": "Inter-Medium"
+// );
+
+// @each $fontVar, $font-family,
+// $font-name in $fonts {
+//     @font-face {
+//         font-family: '#{$font-family}';
+//         src: url("/static/fonts/Inter/#{$font-family}.ttf");
+//         font-style: normal;
+//         -webkit-font-smoothing: antialiased;
+//         -moz-osx-font-smoothing: grayscale;
+//     }
+
+// }
+
+// @font-face {
+//   font-family: 'Rutarri';
+//   src: url("/assets/fonts/rutarri/Ruttari.ttf");
+//   font-style: normal;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }

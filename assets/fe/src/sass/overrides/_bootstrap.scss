@@ -1,0 +1,155 @@
+//overriding bootstrap theme colors
+@use "sass:map";
+
+$font-sizes: (
+  36: #{torem(36)},
+  32: #{torem(32)},
+  28: #{torem(28)},
+  24: #{torem(24)},
+  20: #{torem(20)},
+  22: #{torem(22)},
+  16: #{torem(16)},
+  18: #{torem(18)},
+  14: #{torem(14)},
+  12: #{torem(12)}
+);
+
+$theme-colors: (
+  "primary": green,
+  "secondary": #FA4B5A,
+  "success": #00BC00,
+  "light": #F4F5F7,
+  "danger": #E82600,
+  "slate": #2e2e2e,
+);
+
+//disabling default bootstrap box shadows 
+
+$enable-shadows: false;
+
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+}
+
+
+$disable_responsives: (
+  'flex',
+  'flex-grow',
+  'flex-shrink',
+  'flex-wrap',
+  'order',
+  'gap',
+  'position',
+  'display',
+  'align-items',
+  'text-align',
+  'justify-content',
+  'margin',
+  'margin-x',
+  'margin-y',
+  'margin-top',
+  'margin-bottom',
+  'margin-start',
+  'margin-end',
+  'negative-margin-x',
+  'negative-margin-y',
+  'negative-margin-start',
+  'negative-margin-end',
+  'negative-margin-top',
+  'negative-margin-bottom',
+  'negative-margin',
+  'padding',
+  'padding-x',
+  'padding-y',
+  'padding-top',
+  'padding-bottom',
+  'padding-start',
+  'padding-end',
+
+);
+
+$remove_utils: (
+  'float',
+  'align-content',
+  'sticky'
+);
+
+$custom-colors: (
+  "primary": $P-primary,
+  // "primary-20": $P-primary-20,
+
+  "secondary": $P-secondary,
+  "secondary-dark": $P-secondary-dark,
+  // "secondary-dark-20": $P-secondary-dark-20,
+
+  "grey": $P-grey,
+  "grey-dark": $P-grey-dark,
+  // "grey-dark-20": $P-grey-dark-20,
+
+
+  "fourth": $P-fourth,
+  "fourth-dark": $P-fourth-dark,
+  // "fourth-dark-20": $P-fourth-dark-20,
+
+  "tertiary": $P-tertiary,
+  "tertiary-dark": $P-tertiary-dark,
+  // "tertiary-dark-20": $P-tertiary-dark-20,
+
+  "white": $P-white,
+  "black": $P-black,
+  "extra": $P-extra,
+  "link": $P-link-color,
+  "line-color": $line-color,
+  
+  "quaternary": $P-quaternary
+);
+
+@function generate_custom_utils(){
+  $map: ();
+  @each $key in $disable_responsives {
+    $map: map-merge($map,map.set($map,$key, map.merge(map.get($utilities,$key),(
+      responsive: false,
+      print: false
+    ))))
+  }
+
+  @each $key in $remove_utils {
+    $map: map-merge($map,map.set($map,$key,null))
+  }
+  @return $map;
+}
+
+
+$utilities: map-merge(
+   map_merge($utilities,generate_custom_utils()) ,
+  (
+    "color": (
+      property: color,
+      class: text,
+      values: $custom-colors,
+      responsive: false
+    ),
+    "background-color": (
+      property: background-color,
+      class: bg,
+      values: $custom-colors,
+      responsive: false
+    ),
+    "font-size": (
+      rfs: true,
+      property: font-size,
+      class: fs,
+      values: $font-sizes
+    ),
+  )
+);
