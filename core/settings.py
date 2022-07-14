@@ -153,7 +153,7 @@ USE_TZ = True
 try:
     CORS_ALLOWED_ORIGINS = json.loads(os.environ.get("CORS_ALLOWED_ORIGINS"))
 except:
-    CORS_ALLOWED_ORIGINS = []
+    CORS_ORIGIN_ALLOW_ALL = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

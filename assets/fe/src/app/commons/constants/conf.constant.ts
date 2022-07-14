@@ -8,7 +8,7 @@ export const AUTH_KEY = 'FDZeQCcykQpQMWNYtAQ';
 
 /* API URL
  */
-export const API_URL = '/api/';
+export const API_URL = 'http://localhost:8000/api/';
 
 /* HOST
  */
